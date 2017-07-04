@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
 <VBox xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controls.RSAKeyGeneratorTabController">
    <children>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="336.0" prefWidth="600.0">
-      </AnchorPane>
+         <children>
+            <TextField layoutX="14.0" layoutY="31.0" prefHeight="25.0" prefWidth="480.0" />
+            <Label layoutX="14.0" layoutY="14.0" text="Nazwa Użytkownika :" />
+            <Button fx:id="button_Create_RSA_Key" layoutX="240.0" layoutY="276.0" mnemonicParsing="false" onAction="#button_Create_RSA_Key_Action" prefHeight="50.0" prefWidth="330.0" text="Generate RSA Key" />
+            <TextField layoutX="14.0" layoutY="82.0" prefHeight="25.0" prefWidth="480.0" />
+            <Label layoutX="14.0" layoutY="65.0" text="Hasło do klucza prywatnego :" />
+         </children></AnchorPane>
    </children>
 
 </VBox>
