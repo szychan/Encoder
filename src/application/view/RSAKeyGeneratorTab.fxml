@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controls.RSAKeyGeneratorTabController">
+   <children>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="336.0" prefWidth="600.0">
+      </AnchorPane>
+   </children>
+
+</VBox>

@@ -1,5 +1,6 @@
 package application.controls;
 
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -14,7 +15,16 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
 public class MainPageController {
+	@FXML private TabPane tabPaneMain;
+	// Inject tab content.
+	@FXML private Tab encryptionTab;
+	// Inject controller
+	@FXML private EncryptionTabController encryptionTabController;
 
+	// Inject tab content.
+	@FXML private Tab decryptionTab;
+	// Inject controller
+	@FXML private DecryptionTabController decryptionTabController;
     @FXML
     private ComboBox<?> comboBox_Tryb;
 
@@ -86,6 +96,19 @@ public class MainPageController {
 
     @FXML
     private ProgressBar progressBar_Stan;
+    
+    public void init() {
+        tabPane.getSelectionModel().selectedItemProperty().addListener((ObservableValue<? extends Tab> observable,
+                                                                        Tab oldValue, Tab newValue) -> {
+            if (newValue == decryptionTab) {
+                System.out.println("Bar Tab page");
+                
+            } else if (newValue == encryptionTab) {
+                System.out.println("Foo Tab page");
+               
+            }
+        });
+    }
 
     @FXML
     void button_NowyOdbiorca_Szyfrowanie_Action(ActionEvent event) {

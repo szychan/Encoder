@@ -6,72 +6,43 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="610.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controls.MainPageController">
-    <children>
-      <TabPane layoutY="-1.0" prefHeight="397.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab text="Szyfrowanie">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="336.0" prefWidth="600.0">
-                     <children>
-                        <ComboBox fx:id="comboBox_Tryb" layoutX="242.0" layoutY="147.0" prefHeight="25.0" prefWidth="120.0" />
-                        <ComboBox fx:id="comboBox_DlugoscBloku" layoutX="427.0" layoutY="196.0" prefWidth="120.0" />
-                        <ComboBox fx:id="comboBox_DlugoscKlucza" layoutX="427.0" layoutY="147.0" prefWidth="120.0" />
-                        <TextField fx:id="textField_PlikWejsciowy_Szyfrowanie" editable="false" layoutX="14.0" layoutY="31.0" prefHeight="25.0" prefWidth="480.0" text="Wybierz plik do zaszyfrowania ..." />
-                        <TextField fx:id="textField_PlikWyjsciowy_Szyfrowanie" editable="false" layoutX="14.0" layoutY="82.0" prefHeight="25.0" prefWidth="480.0" text="Wybierz ścieżkę do zapisu pliku zaszyfrowanego ..." />
-                        <Label layoutX="14.0" layoutY="14.0" text="Plik Wejściowy (Niezaszyfrowany) :" />
-                        <Label layoutX="14.0" layoutY="65.0" text="Plik Wyjściowy (Zaszyfrowany) :" />
-                        <Button fx:id="button_WczytajPlik_Szyfrowanie" layoutX="507.0" layoutY="31.0" mnemonicParsing="false" onAction="#button_WczytajPlik_Szyfrowanie_Action" prefWidth="80.0" text="Wczytaj plik" />
-                        <Button fx:id="button_ZapiszDo_Szyfrowanie" layoutX="507.0" layoutY="82.0" mnemonicParsing="false" onAction="#button_ZapiszDo_Szyfrowanie_Action" prefWidth="80.0" text="Zapisz do" />
-                        <Button fx:id="button_Szyfruj_Szyfrowanie" layoutX="240.0" layoutY="276.0" mnemonicParsing="false" onAction="#button_Szyfruj_Szyfrowanie_Action" prefHeight="50.0" prefWidth="330.0" text="Szyfruj" />
-                        <Label layoutX="285.0" layoutY="129.0" text="Tryb : " />
-                        <Label layoutX="448.0" layoutY="179.0" text="Dłuość Bloku : " />
-                        <Label layoutX="442.0" layoutY="129.0" text="Długość Klucza : " />
-                        <Button fx:id="button_NowyOdbiorca_Szyfrowanie" layoutX="46.0" layoutY="301.0" mnemonicParsing="false" onAction="#button_NowyOdbiorca_Szyfrowanie_Action" text="Nowy" />
-                        <Button fx:id="button_Usun_Szyfrowanie" layoutX="138.0" layoutY="301.0" mnemonicParsing="false" onAction="#button_Usun_Szyfrowanie_Action" text="Usuń" />
-                        <Label layoutX="14.0" layoutY="127.0" text="Odbiorcy :" />
-                        <ListView fx:id="listView_Odbiorcy_Szyfrowanie" layoutX="14.0" layoutY="145.0" prefHeight="142.0" prefWidth="200.0" />
-                        <ComboBox fx:id="comboBox_DlugoscPodbloku" layoutX="427.0" layoutY="244.0" prefHeight="25.0" prefWidth="120.0" />
-                        <Label layoutX="436.0" layoutY="227.0" text="Długość Podbloku :" />
-                        <Label layoutX="265.0" layoutY="179.0" text="Liczba Rund :" />
-                        <ComboBox fx:id="comboBox_LiczbaRund" layoutX="240.0" layoutY="196.0" prefWidth="120.0" />
-                     </children>
-                  </AnchorPane>
-            </content>
-          </Tab>
-          <Tab text="Odszyfrowanie">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <TextField fx:id="textField_PlikWejsciowy_Odszyfrowanie" editable="false" layoutX="14.0" layoutY="31.0" prefWidth="480.0" text="Wybierz plik do odszyfrowania ..." />
-                        <TextField fx:id="textField_PlikWyjsciowy_Odszyfrowanie" editable="false" layoutX="14.0" layoutY="82.0" prefWidth="480.0" text="Wybierz ścieżkę do zapisu pliku odszyfrowaniego ... " />
-                        <Button fx:id="button_WczytajPlik_Odszyfrowanie" layoutX="507.0" layoutY="31.0" mnemonicParsing="false" onAction="#button_WczytajPlik_Odszyfrowanie_Action" prefWidth="80.0" text="Wczytaj plik" />
-                        <Button fx:id="button_ZapiszDo_Odszyfrowanie" layoutX="507.0" layoutY="82.0" mnemonicParsing="false" onAction="#button_ZapiszDo_Odszyfrowanie_Action" prefWidth="80.0" text="Zapisz do" />
-                        <Label layoutX="14.0" layoutY="14.0" text="Plik Wejściowy (Zaszyfrowany) :" />
-                        <Label layoutX="14.0" layoutY="65.0" text="Plik Wyjściowy (Niezaszyfrowany) :" />
-                        <Label layoutX="305.0" layoutY="191.0" text="Hasło : " />
-                        <Button fx:id="button_Odszyfruj_Odszyfrowanie" layoutX="240.0" layoutY="276.0" mnemonicParsing="false" onAction="#button_Odszyfruj_Odszyfrowanie_Action" prefHeight="50.0" prefWidth="330.0" text="Odszyfruj" />
-                        <ListView fx:id="listView_Odbiorcy_Odszyfrowanie" layoutX="14.0" layoutY="126.0" prefHeight="200.0" prefWidth="200.0" />
-                        <PasswordField fx:id="passwordField_Haslo_Odszyfrowanie" layoutX="345.0" layoutY="187.0" onMouseClicked="#myszkoklik" />
-                     </children>
-                  </AnchorPane>
-            </content>
-          </Tab>
-        </tabs>
-      </TabPane>
-      <TabPane fx:id="tabPane" layoutY="427.0" prefHeight="200.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab fx:id="tabLog" text="Log">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <TextArea fx:id="textArea_Log" editable="false" layoutX="110.0" layoutY="-23.0" prefHeight="171.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                     </children>
-                  </AnchorPane>
-            </content>
-          </Tab>
-        </tabs>
-      </TabPane>
-      <ProgressBar fx:id="progressBar_Stan" layoutX="50.0" layoutY="402.0" prefWidth="500.0" progress="0.0" />
-    </children>
+<AnchorPane id="AnchorPane" prefHeight="610.0" prefWidth="600.0"
+	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="application.controls.MainPageController">
+	<children>
+		<TabPane layoutY="-1.0" prefHeight="397.0" prefWidth="600.0"
+			tabClosingPolicy="UNAVAILABLE" >
+			<tabs>
+				<Tab fx:id="encryptionTab" text="EncryptionTab">
+					<fx:include fx:id="encryptionTabPage" source="EncryptionTab.fxml" />
+				</Tab>
+				<Tab fx:id="decryptionTab" text="DecryptionTab">
+					<fx:include fx:id="decryptionTabPage" source="DecryptionTab.fxml" />
+				</Tab>
+				<Tab fx:id="rsaKeyGenerator" text="RSAKeyGenerator">
+					<fx:include fx:id="rsaKeyGeneratorTabPage" source="RSAKeyGeneratorTab.fxml" />
+				</Tab>
+			</tabs>
+		</TabPane>
+		<TabPane fx:id="tabPane" layoutY="427.0" prefHeight="200.0"
+			prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+			<tabs>
+				<Tab fx:id="tabLog" text="Log">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+							prefWidth="200.0">
+							<children>
+								<TextArea fx:id="textArea_Log" editable="false"
+									layoutX="110.0" layoutY="-23.0" prefHeight="171.0" prefWidth="600.0"
+									AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+									AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+			</tabs>
+		</TabPane>
+		<ProgressBar fx:id="progressBar_Stan" layoutX="50.0"
+			layoutY="402.0" prefWidth="500.0" progress="0.0" />
+	</children>
 </AnchorPane>
