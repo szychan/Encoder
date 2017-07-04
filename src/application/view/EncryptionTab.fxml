@@ -8,31 +8,53 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controls.EncryptionTabController">
+<VBox xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="application.controls.EncryptionTabController">
 
-	<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="336.0" prefWidth="600.0">
+	<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="336.0"
+		prefWidth="600.0">
 		<children>
-			<ComboBox fx:id="comboBox_Tryb" layoutX="242.0" layoutY="147.0" prefHeight="25.0" prefWidth="120.0" />
-			<ComboBox fx:id="comboBox_DlugoscBloku" layoutX="427.0" layoutY="196.0" prefWidth="120.0" />
-			<ComboBox fx:id="comboBox_DlugoscKlucza" layoutX="427.0" layoutY="147.0" prefWidth="120.0" />
-			<TextField fx:id="textField_PlikWejsciowy_Szyfrowanie" editable="false" layoutX="14.0" layoutY="31.0" prefHeight="25.0" prefWidth="480.0" text="Wybierz plik do zaszyfrowania ..." />
-			<TextField fx:id="textField_PlikWyjsciowy_Szyfrowanie" editable="false" layoutX="14.0" layoutY="82.0" prefHeight="25.0" prefWidth="480.0" text="Wybierz ścieżkę do zapisu pliku zaszyfrowanego ..." />
-			<Label layoutX="14.0" layoutY="14.0" text="Plik Wejściowy (Niezaszyfrowany) :" />
-			<Label layoutX="14.0" layoutY="65.0" text="Plik Wyjściowy (Zaszyfrowany) :" />
-			<Button fx:id="button_WczytajPlik_Szyfrowanie" layoutX="507.0" layoutY="31.0" mnemonicParsing="false" onAction="#button_WczytajPlik_Szyfrowanie_Action" prefWidth="80.0" text="Wczytaj plik" />
-			<Button fx:id="button_ZapiszDo_Szyfrowanie" layoutX="507.0" layoutY="82.0" mnemonicParsing="false" onAction="#button_ZapiszDo_Szyfrowanie_Action" prefWidth="80.0" text="Zapisz do" />
-			<Button fx:id="button_Szyfruj_Szyfrowanie" layoutX="240.0" layoutY="276.0" mnemonicParsing="false" onAction="#button_Szyfruj_Szyfrowanie_Action" prefHeight="50.0" prefWidth="330.0" text="Szyfruj" />
-			<Label layoutX="285.0" layoutY="129.0" text="Tryb : " />
-			<Label layoutX="448.0" layoutY="179.0" text="Dłuość Bloku : " />
-			<Label layoutX="442.0" layoutY="129.0" text="Długość Klucza : " />
-			<Button fx:id="button_NowyOdbiorca_Szyfrowanie" layoutX="46.0" layoutY="301.0" mnemonicParsing="false" onAction="#button_NowyOdbiorca_Szyfrowanie_Action" text="Nowy" />
-			<Button fx:id="button_Usun_Szyfrowanie" layoutX="138.0" layoutY="301.0" mnemonicParsing="false" onAction="#button_Usun_Szyfrowanie_Action" text="Usuń" />
-			<Label layoutX="14.0" layoutY="127.0" text="Odbiorcy :" />
-			<ListView fx:id="listView_Odbiorcy_Szyfrowanie" layoutX="14.0" layoutY="145.0" prefHeight="142.0" prefWidth="200.0" />
-			<ComboBox fx:id="comboBox_DlugoscPodbloku" layoutX="427.0" layoutY="244.0" prefHeight="25.0" prefWidth="120.0" />
-			<Label layoutX="436.0" layoutY="227.0" text="Długość Podbloku :" />
-			<Label layoutX="265.0" layoutY="179.0" text="Liczba Rund :" />
-			<ComboBox fx:id="comboBox_LiczbaRund" layoutX="240.0" layoutY="196.0" prefWidth="120.0" />
+			<ComboBox fx:id="comboBox_Mode" layoutX="242.0" layoutY="147.0"
+				prefHeight="25.0" prefWidth="120.0" />
+			<ComboBox fx:id="comboBox_BlockSize" layoutX="427.0"
+				layoutY="196.0" prefWidth="120.0" />
+			<ComboBox fx:id="comboBox_KeyLenght" layoutX="427.0"
+				layoutY="147.0" prefWidth="120.0" />
+			<TextField fx:id="textField_InputFile_Encryption" editable="false"
+				layoutX="14.0" layoutY="31.0" prefHeight="25.0" prefWidth="480.0"
+				text="Choose file to encrypt ..." />
+			<TextField fx:id="textField_OutputFile_Encryption"
+				editable="false" layoutX="14.0" layoutY="82.0" prefHeight="25.0"
+				prefWidth="480.0" text="Choose location for encrypted file ..." />
+			<Label layoutX="14.0" layoutY="14.0" text="Input file (File to encrypt) :" />
+			<Label layoutX="14.0" layoutY="65.0" text="Output file (Encrypted file) :" />
+			<Button fx:id="button_LoadFile_Encryption" layoutX="507.0"
+				layoutY="31.0" mnemonicParsing="false" onAction="#button_LoadFile_Encryption_Action"
+				prefWidth="80.0" text="Load file" />
+			<Button fx:id="button_SaveTo_Encryption" layoutX="507.0"
+				layoutY="82.0" mnemonicParsing="false" onAction="#button_SaveTo_Encryption_Action"
+				prefWidth="80.0" text="Save to" />
+			<Button fx:id="button_Encrypt_Encryption" layoutX="240.0"
+				layoutY="276.0" mnemonicParsing="false" onAction="#button_Encrypt_Encryption_Action"
+				prefHeight="50.0" prefWidth="330.0" text="Encrypt" />
+			<Label layoutX="280.0" layoutY="129.0" text="Mode : " />
+			<Label layoutX="456.0" layoutY="179.0" text="Block Size : " />
+			<Label layoutX="453.0" layoutY="129.0" text="Key Lenght : " />
+			<Button fx:id="button_NewRecipent_Encryption" layoutX="52.0"
+				layoutY="301.0" mnemonicParsing="false"
+				onAction="#button_NewRecipent_Encryption_Action" text="New" />
+			<Button fx:id="button_Delete_Encryption" layoutX="128.0"
+				layoutY="301.0" mnemonicParsing="false"
+				onAction="#button_DeleteRecipent_Encryption_Action" text="Delete" />
+			<Label layoutX="14.0" layoutY="127.0" text="Recipents :" />
+			<ListView fx:id="listView_Recipents_Encryption" layoutX="14.0"
+				layoutY="145.0" prefHeight="142.0" prefWidth="200.0" />
+			<ComboBox fx:id="comboBox_SubblockSize" layoutX="427.0"
+				layoutY="244.0" prefHeight="25.0" prefWidth="120.0" />
+			<Label layoutX="448.0" layoutY="227.0" text="Subblock Size :" />
+			<Label layoutX="277.0" layoutY="179.0" text="Rounds :" />
+			<ComboBox fx:id="comboBox_Rounds" layoutX="240.0" layoutY="196.0"
+				prefWidth="120.0" />
 		</children>
 	</AnchorPane>
 

@@ -9,68 +9,68 @@ import javafx.scene.control.TextField;
 
 public class EncryptionTabController {
 
-	@FXML
-	private ComboBox<?> comboBox_Tryb;
+    @FXML
+    private ComboBox<?> comboBox_Mode;
 
-	@FXML
-	private ComboBox<?> comboBox_DlugoscBloku;
+    @FXML
+    private ComboBox<?> comboBox_BlockSize;
 
-	@FXML
-	private ComboBox<?> comboBox_DlugoscKlucza;
+    @FXML
+    private ComboBox<?> comboBox_KeyLenght;
 
-	@FXML
-	private TextField textField_PlikWejsciowy_Szyfrowanie;
+    @FXML
+    private TextField textField_InputFile_Encryption;
 
-	@FXML
-	private TextField textField_PlikWyjsciowy_Szyfrowanie;
+    @FXML
+    private TextField textField_OutputFile_Encryption;
 
-	@FXML
-	private Button button_WczytajPlik_Szyfrowanie;
+    @FXML
+    private Button button_LoadFile_Encryption;
 
-	@FXML
-	private Button button_ZapiszDo_Szyfrowanie;
+    @FXML
+    private Button button_SaveTo_Encryption;
 
-	@FXML
-	private Button button_Szyfruj_Szyfrowanie;
+    @FXML
+    private Button button_Encrypt_Encryption;
 
-	@FXML
-	private Button button_NowyOdbiorca_Szyfrowanie;
+    @FXML
+    private Button button_NewRecipent_Encryption;
 
-	@FXML
-	private Button button_Usun_Szyfrowanie;
+    @FXML
+    private Button button_Delete_Encryption;
 
-	@FXML
-	private ListView<?> listView_Odbiorcy_Szyfrowanie;
+    @FXML
+    private ListView<?> listView_Recipents_Encryption;
 
-	@FXML
-	private ComboBox<?> comboBox_DlugoscPodbloku;
+    @FXML
+    private ComboBox<?> comboBox_SubblockSize;
 
-	@FXML
-	private ComboBox<?> comboBox_LiczbaRund;
+    @FXML
+    private ComboBox<?> comboBox_Rounds;
 
-	@FXML
-	void button_NowyOdbiorca_Szyfrowanie_Action(ActionEvent event) {
+    @FXML
+    void button_DeleteRecipent_Encryption_Action(ActionEvent event) {
 
-	}
+    }
 
-	@FXML
-	void button_Szyfruj_Szyfrowanie_Action(ActionEvent event) {
+    @FXML
+    void button_Encrypt_Encryption_Action(ActionEvent event) {
 
-	}
+    }
 
-	@FXML
-	void button_Usun_Szyfrowanie_Action(ActionEvent event) {
+    @FXML
+	void button_LoadFile_Encryption_Action(ActionEvent event) {
 
-	}
+    }
 
-	@FXML
-	void button_WczytajPlik_Szyfrowanie_Action(ActionEvent event) {
+    @FXML
+    void button_NewRecipent_Encryption_Action(ActionEvent event) {
 
-	}
+    }
 
-	@FXML
-	void button_ZapiszDo_Szyfrowanie_Action(ActionEvent event) {
+    @FXML
+    void button_SaveTo_Encryption_Action(ActionEvent event) {
 
-	}
+    }
 
 }

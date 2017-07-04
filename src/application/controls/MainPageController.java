@@ -15,144 +15,55 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
 public class MainPageController {
-	@FXML private TabPane tabPaneMain;
+	@FXML
+	private TabPane tabPaneMain;
 	// Inject tab content.
-	@FXML private Tab encryptionTab;
+	@FXML
+	private Tab encryptionTab;
 	// Inject controller
-	@FXML private EncryptionTabController encryptionTabController;
+	@FXML
+	private EncryptionTabController encryptionTabController;
 
 	// Inject tab content.
-	@FXML private Tab decryptionTab;
+	@FXML
+	private Tab decryptionTab;
 	// Inject controller
-	@FXML private DecryptionTabController decryptionTabController;
-    @FXML
-    private ComboBox<?> comboBox_Tryb;
+	@FXML
+	private DecryptionTabController decryptionTabController;
 
-    @FXML
-    private ComboBox<?> comboBox_DlugoscBloku;
+	// Inject tab content.
+	@FXML
+	private Tab generationTab;
+	// Inject controller
+	@FXML
+	private GenerationTabController generationTabController;
 
-    @FXML
-    private ComboBox<?> comboBox_DlugoscKlucza;
+	@FXML
+	private TabPane tabPane;
 
-    @FXML
-    private TextField textField_PlikWejsciowy_Szyfrowanie;
+	@FXML
+	private Tab logTab;
 
-    @FXML
-    private TextField textField_PlikWyjsciowy_Szyfrowanie;
+	@FXML
+	private TextArea textArea_Log;
 
-    @FXML
-    private Button button_WczytajPlik_Szyfrowanie;
+	@FXML
+	private ProgressBar progressBar_Status;
 
-    @FXML
-    private Button button_ZapiszDo_Szyfrowanie;
+	public void init() {
+		tabPane.getSelectionModel().selectedItemProperty()
+				.addListener((ObservableValue<? extends Tab> observable, Tab oldValue, Tab newValue) -> {
+					if (newValue == encryptionTab) {
+						System.out.println("encryptionTabPage");
 
-    @FXML
-    private Button button_Szyfruj_Szyfrowanie;
+					} else if (newValue == decryptionTab) {
+						System.out.println("decryption tab page");
 
-    @FXML
-    private Button button_NowyOdbiorca_Szyfrowanie;
+					} else if (newValue == generationTab) {
+						System.out.println("generation tab page");
+					}
+				});
 
-    @FXML
-    private Button button_Usun_Szyfrowanie;
-
-    @FXML
-    private ListView<?> listView_Odbiorcy_Szyfrowanie;
-
-    @FXML
-    private ComboBox<?> comboBox_DlugoscPodbloku;
-
-    @FXML
-    private ComboBox<?> comboBox_LiczbaRund;
-
-    @FXML
-    private TextField textField_PlikWejsciowy_Odszyfrowanie;
-
-    @FXML
-    private TextField textField_PlikWyjsciowy_Odszyfrowanie;
-
-    @FXML
-    private Button button_WczytajPlik_Odszyfrowanie;
-
-    @FXML
-    private Button button_ZapiszDo_Odszyfrowanie;
-
-    @FXML
-    private Button button_Odszyfruj_Odszyfrowanie;
-
-    @FXML
-    private ListView<?> listView_Odbiorcy_Odszyfrowanie;
-
-    @FXML
-    private PasswordField passwordField_Haslo_Odszyfrowanie;
-
-    @FXML
-    private TabPane tabPane;
-
-    @FXML
-    private Tab tabLog;
-
-    @FXML
-    private TextArea textArea_Log;
-
-    @FXML
-    private ProgressBar progressBar_Stan;
-    
-    public void init() {
-        tabPane.getSelectionModel().selectedItemProperty().addListener((ObservableValue<? extends Tab> observable,
-                                                                        Tab oldValue, Tab newValue) -> {
-            if (newValue == decryptionTab) {
-                System.out.println("Bar Tab page");
-                
-            } else if (newValue == encryptionTab) {
-                System.out.println("Foo Tab page");
-               
-            }
-        });
-    }
-
-    @FXML
-    void button_NowyOdbiorca_Szyfrowanie_Action(ActionEvent event) {
-
-    }
-
-    @FXML
-    void button_Odszyfruj_Odszyfrowanie_Action(ActionEvent event) {
-
-    }
-
-    @FXML
-    void button_Szyfruj_Szyfrowanie_Action(ActionEvent event) {
-
-    }
-
-    @FXML
-    void button_Usun_Szyfrowanie_Action(ActionEvent event) {
-
-    }
-
-    @FXML
-    void button_WczytajPlik_Odszyfrowanie_Action(ActionEvent event) {
-
-    }
-
-    @FXML
-    void button_WczytajPlik_Szyfrowanie_Action(ActionEvent event) {
-
-    }
-
-    @FXML
-    void button_ZapiszDo_Odszyfrowanie_Action(ActionEvent event) {
-
-    }
-
-    @FXML
-    void button_ZapiszDo_Szyfrowanie_Action(ActionEvent event) {
-
-    }
-
-    @FXML
-    void myszkoklik(MouseEvent event) {
-
-    }
+	}
 
 }

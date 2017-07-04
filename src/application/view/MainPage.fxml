@@ -11,23 +11,23 @@
 	fx:controller="application.controls.MainPageController">
 	<children>
 		<TabPane layoutY="-1.0" prefHeight="397.0" prefWidth="600.0"
-			tabClosingPolicy="UNAVAILABLE" >
+			tabClosingPolicy="UNAVAILABLE">
 			<tabs>
-				<Tab fx:id="encryptionTab" text="EncryptionTab">
+				<Tab fx:id="encryptionTab" text="Encryption">
 					<fx:include fx:id="encryptionTabPage" source="EncryptionTab.fxml" />
 				</Tab>
-				<Tab fx:id="decryptionTab" text="DecryptionTab">
+				<Tab fx:id="decryptionTab" text="Decryption">
 					<fx:include fx:id="decryptionTabPage" source="DecryptionTab.fxml" />
 				</Tab>
-				<Tab fx:id="rsaKeyGenerator" text="RSAKeyGenerator">
-					<fx:include fx:id="rsaKeyGeneratorTabPage" source="RSAKeyGeneratorTab.fxml" />
+				<Tab fx:id="generationTab" text="RSA Key Generator">
+					<fx:include fx:id="rsaKeyGeneratorTabPage" source="GenerationTab.fxml" />
 				</Tab>
 			</tabs>
 		</TabPane>
 		<TabPane fx:id="tabPane" layoutY="427.0" prefHeight="200.0"
 			prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
 			<tabs>
-				<Tab fx:id="tabLog" text="Log">
+				<Tab fx:id="logTab" text="Log">
 					<content>
 						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
 							prefWidth="200.0">
@@ -42,7 +42,7 @@
 				</Tab>
 			</tabs>
 		</TabPane>
-		<ProgressBar fx:id="progressBar_Stan" layoutX="50.0"
+		<ProgressBar fx:id="progressBar_Status" layoutX="50.0"
 			layoutY="402.0" prefWidth="500.0" progress="0.0" />
 	</children>
 </AnchorPane>
